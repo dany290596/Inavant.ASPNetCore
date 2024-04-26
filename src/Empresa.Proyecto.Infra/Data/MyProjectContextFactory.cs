@@ -10,7 +10,7 @@ namespace Empresa.Proyecto.Infra.Data
         public MyProjectContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<MyProjectContext>();
-            optionsBuilder.UseSqlServer("Server=DESKTOP-G9OVET8\\SQLEXPRESS;Database=testProject;MultipleActiveResultSets=true;User Id=sa;Password=123;");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=testProject;Trusted_Connection=True;MultipleActiveResultSets=true");
 
             return new MyProjectContext(optionsBuilder.Options);
         }
