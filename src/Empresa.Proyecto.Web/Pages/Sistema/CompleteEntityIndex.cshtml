@@ -1,0 +1,88 @@
+﻿@page
+@model Empresa.Proyecto.Web.Pages.Sistema.CompleteEntityIndexModel
+@{
+}
+
+@{
+    ViewData["Title"] = "Entidades";
+    var culture = System.Globalization.CultureInfo.CurrentCulture.ToString();
+}
+
+@using Empresa.Proyecto.Core.Entities;
+
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <table id="entities" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Creado</th>
+                <th>Modificado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+    </table>
+
+    <hr />
+    <p class="">Copyright © Daniel Benito Rosales @DateTime.Now.Year - V1.0.0</p>
+</div>
+
+
+@section Scripts{
+            <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#entities').DataTable({
+                "ordering": true,
+                "order": [],
+                "ajax": {
+                    url: "?handler=Catalog",
+                    type: 'POST',
+                    headers: { 'RequestVerificationToken': $('@Html.AntiForgeryToken()').val() }
+                },
+                select: 'multi',
+                columns: [
+                    {
+                        data: 'Id',
+                        orderable: false
+                    },
+                    {
+                        data: 'Name',
+                        orderable: true
+                    },
+                    {
+                        data: 'Created',
+                        orderable: false,
+                        render: function (data) {
+                            var date = new Date(data);
+                            var month = date.getMonth() + 1;
+                            return date.getDate() + "/" + (month.toString().length > 1 ? month : "0" + month) + "/" + date.getFullYear();
+                        }
+                    },
+                    {
+                        data: 'Modified',
+                        orderable: false,
+                        render: function (data) {
+                            var date = new Date(data);
+                            var month = date.getMonth() + 1;
+                            return date.getDate() + "/" + (month.toString().length > 1 ? month : "0" + month) + "/" + date.getFullYear();
+                        }
+                    },
+                    {
+                        data: null,
+                        defaultContent:
+                            '<a href="#" class="edit">Editar</a> / <a href="#" class="remove">Eliminar</a>',
+                    },
+                ],
+                scrollX: true,
+                colReorder: true
+            });
+        });
+
+    </script>
+}

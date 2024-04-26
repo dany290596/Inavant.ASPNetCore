@@ -1,0 +1,16 @@
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\Empresa.Proyecto.Helpers\bin\Debug\net6.0\Empresa.Proyecto.Helpers.deps.json
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\Empresa.Proyecto.Helpers\bin\Debug\net6.0\Empresa.Proyecto.Helpers.dll
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\Empresa.Proyecto.Helpers\bin\Debug\net6.0\Empresa.Proyecto.Helpers.pdb
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\Empresa.Proyecto.Helpers\bin\Debug\net6.0\Empresa.Proyecto.Core.dll
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\Empresa.Proyecto.Helpers\bin\Debug\net6.0\Empresa.Proyecto.Core.pdb
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\Empresa.Proyecto.Helpers\obj\Debug\net6.0\Empresa.Proyecto.Helpers.csproj.AssemblyReference.cache
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\Empresa.Proyecto.Helpers\obj\Debug\net6.0\Empresa.Proyecto.Helpers.GeneratedMSBuildEditorConfig.editorconfig
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\Empresa.Proyecto.Helpers\obj\Debug\net6.0\Empresa.Proyecto.Helpers.AssemblyInfoInputs.cache
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\Empresa.Proyecto.Helpers\obj\Debug\net6.0\Empresa.Proyecto.Helpers.AssemblyInfo.cs
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\Empresa.Proyecto.Helpers\obj\Debug\net6.0\Empresa.Proyecto.Helpers.csproj.CoreCompileInputs.cache
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\Empresa.Proyecto.Helpers\obj\Debug\net6.0\Empresa.Proyecto.Helpers.sourcelink.json
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\Empresa.Proyecto.Helpers\obj\Debug\net6.0\Empresa.Proyecto.Helpers.csproj.CopyComplete
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\Empresa.Proyecto.Helpers\obj\Debug\net6.0\Empresa.Proyecto.Helpers.dll
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\Empresa.Proyecto.Helpers\obj\Debug\net6.0\refint\Empresa.Proyecto.Helpers.dll
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\Empresa.Proyecto.Helpers\obj\Debug\net6.0\Empresa.Proyecto.Helpers.pdb
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\Empresa.Proyecto.Helpers\obj\Debug\net6.0\ref\Empresa.Proyecto.Helpers.dll

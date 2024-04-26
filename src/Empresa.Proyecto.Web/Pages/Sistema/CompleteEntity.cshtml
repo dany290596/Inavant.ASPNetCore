@@ -1,0 +1,76 @@
+﻿@page
+@model Empresa.Proyecto.Web.Pages.Sistema.CompleteEntityModel
+
+@using Microsoft.AspNetCore.Components.Forms
+@{
+}
+
+
+@{
+    ViewData["Title"] = "Entidades - Crear";
+    var culture = System.Globalization.CultureInfo.CurrentCulture.ToString();
+}
+
+@using Empresa.Proyecto.Core.Entities;
+
+
+<h1>@ViewData["Title"]</h1>
+
+
+@using System.ComponentModel.DataAnnotations
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <!--
+    <label asp-for="CompleteEntity!.Id" class="control-label"></label>
+    <input type="number" asp-for="CompleteEntity!.Id" class="form-control" min="0" />
+    <span asp-validation-for="CompleteEntity!.Id" class="text-danger"></span>
+    -->
+
+    <div class="form-group">
+    <label asp-for="CompleteEntity!.Name" class="control-label"></label>
+    <input asp-for="CompleteEntity!.Name" class="form-control" />
+        <span asp-validation-for="CompleteEntity!.Name" class="text-danger error"></span>
+    </div>
+
+        <div class="form-group">
+    <label asp-for="CompleteEntity!.SimpleEntityId" class="control-label"></label>
+    <select asp-for="CompleteEntity!.SimpleEntityId" asp-items="@((List<SelectListItem>)ViewData["VDSimpleEntity"])" class="form-select">
+        <option selected>--Seleccione--</option>
+    </select>
+        <span asp-validation-for="CompleteEntity!.SimpleEntityId" class="text-danger error"></span>
+        </div>
+
+            <div class="form-group">
+    <label asp-for="CompleteEntity!.Created" class="control-label"></label>
+    <input type="date" asp-for="CompleteEntity!.Created" class="form-control" />
+    <span asp-validation-for="CompleteEntity!.Created" class="text-danger"></span>
+            </div>
+
+                <div class="form-group">
+    <label asp-for="CompleteEntity!.Modified" class="control-label"></label>
+    <input type="date" asp-for="CompleteEntity!.Modified" class="form-control" />
+    <span asp-validation-for="CompleteEntity!.Modified" class="text-danger"></span>
+    </div>
+
+    <hr />
+
+    <div class="d-grid gap-2">
+    <input type="submit" class="btn btn-primary" />
+    </div>
+</form>
+<hr />
+<p class="">Copyright © Daniel Benito Rosales @DateTime.Now.Year - V1.0.0</p>
+
+@section scripts {
+@*     <partial name="_ValidationScriptsPartial" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/lib/jquery-ajax-unobtrusive/dist/jquery.unobtrusive-ajax.min.js"></script> *@
+}
+

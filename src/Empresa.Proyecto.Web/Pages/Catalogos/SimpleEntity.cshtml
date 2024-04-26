@@ -1,0 +1,284 @@
+﻿@page
+@model Empresa.Proyecto.Web.Pages.Catalogos.SimpleEntityModel
+
+@{
+    ViewData["Title"] = "Catalogo Simple Entity";
+    var culture = System.Globalization.CultureInfo.CurrentCulture.ToString();
+}
+
+@using Empresa.Proyecto.Core.Entities;
+
+
+<h1>@ViewData["Title"]</h1>
+
+<!--
+<head>
+    <style>
+        table {
+            margin: auto;
+        }
+
+        #pagination {
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+        }
+    </style>
+</head>
+-->
+
+<div>
+    <table id="entities" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Valor</th>
+                <th>Creado</th>
+                <th>Modificado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+      
+    </table>
+
+    <!--
+    <table id="myTable">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+        </tr>
+ 
+    </table>
+    <div id="pagination"></div>
+    -->
+    <hr />
+    <p class="">Copyright © Daniel Benito Rosales @DateTime.Now.Year - V1.0.0</p>
+</div>
+
+
+
+@section Scripts{
+            <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
+    <script type="text/javascript">
+
+
+        /*
+        var list = [];
+                  const rowsPerPage = 5; 
+        let currentPage = 1; 
+        */
+
+
+        $(document).ready(function() {
+            $('#entities').DataTable({
+                "ordering": true,
+                "order": [],
+                "ajax": {
+                    url: "?handler=Catalog",
+                    type: 'POST',
+                    headers: { 'RequestVerificationToken': $('@Html.AntiForgeryToken()').val() }
+                    },
+                    /*
+                    success: function (entity) {
+
+                console.log("ENTITY ::: ", entity.data);
+                        list = entity.data;
+
+                        displayTable(1);
+                        // const responsables = document.getElementById("ticketRespInput");
+
+                        // const arrData = Object.keys(entity).map(item => {
+                        //     return {
+                        //         key: item,
+                        //         value: entity[item]
+                        //     }
+                        // });
+
+                        // const arrDataSorted = arrData.sort((a, b) => (a.value > b.value) ? 1 : ((b.value > a.value) ? -1 : 0));
+
+                        // console.log("www ::: ", arrDataSorted);
+
+                        
+
+                        // for (let idx in arrDataSorted) {
+                        //     console.log("SXSAXSXA ::: ", idx);
+
+                        //     let page = arrDataSorted[idx].value;;
+
+
+                        //     console.log("PAGE ::: ", page);
+                        //     displayTable(page);
+
+
+                        // }
+
+                    }
+                },
+                */
+                select: 'multi',
+                columns:[
+                    { 
+                        data: 'Id',
+                        orderable: false
+                    },
+                    { 
+                        data: 'Name',
+                        orderable: true
+                    },
+                    { 
+                        data: 'Value',
+                        orderable: true
+                    },
+                    { 
+                        data: 'Created',
+                        orderable: false,
+                        render: function (data) {
+                            var date = new Date(data);
+                            var month = date.getMonth() + 1;
+                            return date.getDate() + "/" + (month.toString().length > 1 ? month : "0" + month) + "/" + date.getFullYear();
+                        }
+                    },
+                    { 
+                        data: 'Modified',
+                        orderable: false,
+                        render: function (data) {
+                            var date = new Date(data);
+                            var month = date.getMonth() + 1;
+                            return date.getDate() + "/" + (month.toString().length > 1 ? month : "0" + month) + "/" + date.getFullYear();
+                        }
+                    },
+                    {
+                        data: null,
+                        defaultContent:
+                            '<a href="#" class="edit">Editar</a> / <a href="#" class="remove">Eliminar</a>',
+                    },
+                ],
+                scrollX: true,
+                colReorder: true
+            });
+        })
+
+
+
+
+        /*
+        function displayTable(page) {
+            console.log("AXAXAS ::: ", page);
+            const table = document.getElementById("myTable");
+            const startIndex = (page - 1) * rowsPerPage;
+            const endIndex = startIndex + rowsPerPage;
+            const slicedData = list.slice(startIndex, endIndex);
+            console.log("AAAAAAAAA ", slicedData);
+            // Clear existing table rows
+            table.innerHTML = `
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>City</th>
+                </tr>
+            `;
+
+            // Add new rows to the table
+
+            slicedData.forEach((item) =>{
+
+                console.log("ITEM :::  ", item);
+                const row = table.insertRow();
+                const nameCell = row.insertCell(0);
+                const emailCell = row.insertCell(1);
+                const cityCell = row.insertCell(2);
+                nameCell.innerHTML = item.Id;
+                emailCell.innerHTML = item.Name;
+                cityCell.innerHTML = item.Value;
+              
+        });
+
+            // Update pagination
+            updatePagination(page);
+        }
+
+
+        function updatePagination(currentPage) {
+            const pageCount = Math.ceil(list.length / rowsPerPage);
+            const paginationContainer = document.getElementById("pagination");
+            paginationContainer.innerHTML = "";
+
+            for (let i = 1; i <= pageCount; i++) {
+                const pageLink = document.createElement("a");
+                pageLink.href = "#";
+                pageLink.innerText = i;
+                pageLink.onclick = function () {
+                    displayTable(i);
+                };
+                if (i === currentPage) {
+                    pageLink.style.fontWeight = "bold";
+                }
+                paginationContainer.appendChild(pageLink);
+                paginationContainer.appendChild(document.createTextNode(" "));
+            }
+        }
+        */
+
+
+
+
+
+        // Initial display
+        // displayTable(currentPage);
+
+
+
+
+
+
+
+
+
+
+
+        $(document).ready(function () {
+            $("#entities").on("click", "a.edit", function (e) {
+                e.preventDefault();
+
+                editor
+                    .title("Edit record")
+                    .buttons({
+                        label: "Update",
+                        fn: function () {
+                            editor.submit();
+                        },
+                    })
+                    .edit($(this).closest("tr"));
+            });
+        });
+
+
+        $(document).ready(function () {
+            $("#entities").on("click", "a.remove", function (e) {
+                e.preventDefault();
+
+                editor
+                    .message("Are you sure you wish to remove this record?")
+                    .buttons({
+                        label: "Delete",
+                        fn: function () {
+                            editor.submit();
+                        },
+                    })
+                    .remove($(this).closest("tr"));
+            });
+        });
+    </script>
+}

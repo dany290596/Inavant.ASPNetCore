@@ -1,0 +1,12 @@
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\src\Empresa.Proyecto.Core\bin\Debug\net6.0\Empresa.Proyecto.Core.deps.json
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\src\Empresa.Proyecto.Core\bin\Debug\net6.0\Empresa.Proyecto.Core.dll
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\src\Empresa.Proyecto.Core\bin\Debug\net6.0\Empresa.Proyecto.Core.pdb
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\src\Empresa.Proyecto.Core\obj\Debug\net6.0\Empresa.Proyecto.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\src\Empresa.Proyecto.Core\obj\Debug\net6.0\Empresa.Proyecto.Core.AssemblyInfoInputs.cache
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\src\Empresa.Proyecto.Core\obj\Debug\net6.0\Empresa.Proyecto.Core.AssemblyInfo.cs
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\src\Empresa.Proyecto.Core\obj\Debug\net6.0\Empresa.Proyecto.Core.csproj.CoreCompileInputs.cache
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\src\Empresa.Proyecto.Core\obj\Debug\net6.0\Empresa.Proyecto.Core.sourcelink.json
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\src\Empresa.Proyecto.Core\obj\Debug\net6.0\Empresa.Proyecto.Core.dll
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\src\Empresa.Proyecto.Core\obj\Debug\net6.0\refint\Empresa.Proyecto.Core.dll
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\src\Empresa.Proyecto.Core\obj\Debug\net6.0\Empresa.Proyecto.Core.pdb
+C:\REPOSITORIO-DANY\BACK-END\aspnetcore-example\src\Empresa.Proyecto.Core\obj\Debug\net6.0\ref\Empresa.Proyecto.Core.dll
